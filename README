@@ -1,0 +1,19 @@
+use yaf framework
+
+
+使用php的yaf框架
+
+	简单的用yaf实现了框架的增删改查
+	
+说明1：
+	1 注意yaf的配置的继承性
+	2 注意yaf的rewrite
+	
+
+本项目的基本目的：
+	1 使用yaf框架实现增删列表操作
+
+
+
+
+	

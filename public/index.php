@@ -11,6 +11,8 @@
 * 版 本：1.0
  */
 
+ini_set('display_errors', 0);
+
 define("APP_PATH", realpath(dirname(__FILE__))."/.." );
 $app = new Yaf_Application(APP_PATH."/application/conf/application.ini");
 $app->bootstrap()->run();
