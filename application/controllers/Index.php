@@ -27,11 +27,11 @@ class IndexController extends Yaf_Controller_Abstract{
 		
 		//获取当前的路由规则
 		$router = Yaf_Dispatcher::getInstance()->getRouter();
-		echo "<pre>";print_r($router);
+		//echo "<pre>";print_r($router);
 		
 		var_dump(ini_get('yaf.environ'));
 		
-		
+		echo "<pre>";print_r($this->getView());
 		$this->getView()->assign("content","hi yaf");
 	}
 	

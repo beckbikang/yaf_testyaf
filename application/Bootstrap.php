@@ -35,8 +35,18 @@ class Bootstrap extends Yaf_Bootstrap_Abstract{
 		$route = new Yaf_Route_Rewrite("/index/book",array('controller' => 'index','action' => 'book'));
 		$router->addRoute('product',$route);
 		
+		//rewrite
 		
+		$route = new Yaf_Route_Rewrite("/msg/del/:id",array('controller' => 'msg','action' => 'del'));
+		$router->addRoute('product',$route);
 		
+	}
+	
+	
+	public function _initDb(Yaf_Dispatcher $dispatcher){
+		$model = new BaseModel();
+		$this->_db = $model->getMysqlDb();
+		Yaf_Registry::set('_db', $this->_db);
 	}
 	
 	

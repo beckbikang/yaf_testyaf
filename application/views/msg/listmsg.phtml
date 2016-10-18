@@ -1,0 +1,36 @@
+<html>
+ <head>
+   <title>Hello World</title>
+ </head>
+ <body>
+ 
+<form action="/msg/add" method=POST>
+名字:<input type="text" name="name" >
+消息:<input type="text" name="msg" >
+邮箱:<input type="text" name="email" >
+<input type="submit" value="Submit">
+</form> 
+ 
+  <h4>消息列表</h4>
+<table border="1">
+<tr>
+  <td>id</td>
+  <td>名字</td>
+  <td>消息</td>
+  <td>邮箱</td>
+  <td>时间</td>
+  <td>操作</td>
+</tr>
+<?php foreach($list as $v){?>
+<tr>
+  <td><?php echo $v["id"] ;?></td>
+  <td><?php echo $v["name"] ;?></td>
+  <td><?php echo $v["msg"] ;?></td>
+  <td><?php echo $v["email"] ;?></td>
+  <td><?php  if($v["mtime"]){echo date("Y-m-d H:i:s",$v["mtime"]);}else{echo "";}?></td>
+  <td><a href="/msg/del/<?php echo $v["id"] ;?>" blank="_self" >删除</a></td>
+</tr>
+<?php }?>
+</table>
+ </body>
+</html>
